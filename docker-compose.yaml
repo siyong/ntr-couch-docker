@@ -14,6 +14,7 @@ version: '2'
 services:
   couchdb:
     image: "ntr-couch"
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
@@ -24,11 +25,6 @@ services:
       - 5986:5986
       - 15984:15984
     env_file: dev.env
-    networks:
-      - ntr
     volumes:
-      - './data/couchdb/:/couchdb/data/'
-      - './data/clouseau/:/clouseau/target/clouseau1/'
-networks:
-  ntr:
-    external: true
+      - '/etc/data/couchdb/:/couchdb/data/'
+      - '/etc/data/clouseau/:/clouseau/target/clouseau1/'

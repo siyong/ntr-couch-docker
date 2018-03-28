@@ -17,7 +17,7 @@ ENV MAVEN_VERSION 3.5.2
 ENV DEBIAN_FRONTEND noninteractive
 ENV MAVEN_HOME /usr/share/maven
 
-RUN groupadd -r couchdb && useradd -d /couchdb -g couchdb couchdb
+RUN mkdir /couchdb && groupadd -r couchdb && useradd -d /couchdb -g couchdb couchdb
 
 RUN apt-get update -y \
   && apt-get install -y apt-utils \

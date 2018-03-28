@@ -65,7 +65,7 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 
 # get couchdb source
 RUN mkdir /usr/src/couchdb && cd /usr/src/couchdb \
-  && git clone https://github.com/neutrinity/couchdb . \
+  && git clone https://github.com/siyong/couchdb . \
   && git checkout 350f5919685c82e821bb69110fd21fa4d7e101b9
 
 # compile and install couchdb
@@ -80,7 +80,7 @@ RUN mkdir /clouseau && chown -R couchdb:couchdb /clouseau /couchdb
 
 USER couchdb
 RUN cd /clouseau \
-  && git clone https://github.com/neutrinity/clouseau . \
+  && git clone https://github.com/siyong/clouseau . \
   && mvn -D maven.test.skip=true install
 
 USER root

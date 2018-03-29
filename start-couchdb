@@ -55,4 +55,5 @@ if ! grep -Pzoqr '\[admins\]\n[^;]\w+' /couchdb/etc/local.d/*.ini; then
 fi
 ls
 pwd
-/couchdb/bin/couchdb
+
+/couchdb/couchdb/bin/couchdb

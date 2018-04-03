@@ -121,4 +121,4 @@ USER couchdb
 RUN mkdir /clouseau/target/clouseau1
 VOLUME ["/clouseau/target/clouseau1"]
 
-ENTRYPOINT ["/couchdb/start-couchdb"]
+ENTRYPOINT ["/couchdb/bin/couchdb"]
